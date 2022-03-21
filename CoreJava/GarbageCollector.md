@@ -20,6 +20,7 @@
 | G1 | Incremental collection<br/>Lower worst case latency<br/>Relatively faster promotion (no free lists) <br/>More throughput (no compaction) | Higher footprint  | Predictable/Target latency applications.<br/>Large heaps |
 | Shenondoah |  Lower latency  | Higher footprint | Even lower latency<br> Much Larger heaps  |
 
+![](src/main/resources/GCConfig.png)
 
 ### Concepts
 
@@ -68,6 +69,8 @@
 - In Java 7, interned Strings were removed from PermGen.
 - In Java 8, PermGen space itself is replaced by MetaSpace.
 
+![](src/main/resources/GCGraph.png)
+
 ### Object allocation
 
 - Each thread is assigned TLAB (Thread Local Allocation Buffer) to allocate new objects.
@@ -86,6 +89,8 @@
 - Minor collections are STW events. This is becoming an issue as heaps are getting larger, with more and more live objects.
 - This algorithm is called mark-and-copy
 
+![](src/main/resources/MinorGC run for Sweeping.png)
+
 ### Marking Live Objects
 
 - All objects in graph starting from GC Roots
@@ -93,6 +98,8 @@
 - References from old generation to young generation (aka cross generational references) are also tracked
 - Card tables are used for this. Card tables are array of bytes. Each byte represents 512 bytes of old gen. If byte is set, it means corresponding 512 bytes of old gen has reference to young gen objects.
 - During minor collection, all such cards are checked, then all those 512 byte regions are checked for references. Thus, minor collection latency also depends on number of old gen to young gen references.
+
+![](src/main/resources/GenerationalCollector.png)
 
 ### Major Collection
 
