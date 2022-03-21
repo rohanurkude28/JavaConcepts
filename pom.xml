@@ -8,6 +8,7 @@
     <version>0.0.1</version>
     <modules>
         <module>MultiThreading</module>
+        <module>CoreJava</module>
     </modules>
 
     <properties>
