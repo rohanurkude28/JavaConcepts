@@ -70,3 +70,7 @@ JMM is a specification which guarantees visibility of fields (AKA happens before
 ![](src/main/resources/MemoryFootprintDiagram.png)
 
 ![](src/main/resources/InstructionVsMemory.png)
+
+Heap Tuning
+
+![](src/main/resources/HeapTuning.png)
