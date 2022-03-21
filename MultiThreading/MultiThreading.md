@@ -441,8 +441,8 @@ Condition is associated with single lock. Lock.newCondition()
 
 ### Parallelism vs Concurrency
 
-- Parallelism is about doing a lot of things at once. In java we can use Thread, ThreadPool (ExecutorService, ForkJoinPool, CustomThreadPool eg: Webservers). Requires more than 1 CPU.
-- Concurrency is about dealing with a lot of things at once. Shared resource is to be accessed/updated OR Multiple tasks needs to coordinate. To deal with concurrency we can use - Locks/Synchronised, Atomic Classes, Concurrent DS, Completable Future, CountDownLatch, Phaser, Cyclic Barrier, Semaphore etc.
+- Parallelism is about doing a lot of things at once. In java we can use Thread, ThreadPool (ExecutorService, ForkJoinPool, CustomThreadPool eg: Webservers). When multiple tasks OR several parts of a unique task literally run at the same time. Requires more than 1 CPU.
+- Concurrency is about dealing with a lot of things at once. Shared resource is to be accessed/updated OR Multiple tasks needs to coordinate. To deal with concurrency we can use - Locks/Synchronised, Atomic Classes, Concurrent DS, Completable Future, CountDownLatch, Phaser, Cyclic Barrier, Semaphore etc. Multiple tasks which start, run, and complete in overlapping time periods, in no specific order
 
 ### Volatile vs Atomic
 
