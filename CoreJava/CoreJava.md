@@ -66,3 +66,7 @@ There are three phases in Class Loader
 - Field Visibility - In presence of concurrency
 
 JMM is a specification which guarantees visibility of fields (AKA happens before) amidst of reordering of instructions. Can be solved using Synchronised, Locks, Concurrent Collections, Thread Operations (Join,Start), Final Fields etc. 
+
+![](src/main/resources/MemoryFootprintDiagram.png)
+
+![](src/main/resources/InstructionVsMemory.png)
