@@ -323,6 +323,25 @@ Thread provides facility for UncaughtExceptionHandler. When thread dies due to s
 
 #### ThreadPoolExecutor
 
+Ideal Pool Size 
+
+![](src/main/resources/IdealPoolSize.png)
+
+ConstructorArgs in ExecutorService
+
+![](src/main/resources/ConstructorArgsExecutorService.png)
+
+Queue Types in ExecutorService
+
+![](src/main/resources/QueueTypeExercutorService.png)
+
+Rejection Policy in ExecutorService
+
+![](src/main/resources/RejectionPolicy.png)
+
+- If you want to return value in ExecutorService then use Callable / Future
+- Callable need executor.submit vs Runnable needs executor.execute
+
 #### Threads
 - newFixedThreadPool: corePoolSize == maximumPoolSize
 - newCachedThreadPool: corePoolSize = 0 and maximumPoolSize = Integer.MAX\_VALUE
