@@ -479,4 +479,21 @@ Using ThreadPool create a Pool of "N" threads which will run our 1000 tasks conc
 - ThreadPool comes to our rescue in this case. Having variable specific to a particular thread. Gives us memory efficiency and thread safety.
 
 - Thread Confinement eg: ThreadLocalExample.java
-- Per thread context safety (Thread + Performance). For ex in case of webserver where different stages needs to access the same context. Spring does this in many classes eg: LocaleContextHolder, TransactionContextHolder etc. We should always prefer this delegating this to framework. 
+- Per thread context safety (Thread + Performance). For ex in case of webserver where different stages needs to access the same context. Spring does this in many classes eg: LocaleContextHolder, TransactionContextHolder etc. We should always prefer this delegating this to framework.
+
+### Java Asynchronous Programming
+
+Each thread in Java corresponds to One OS/Native/Kernel Thread. Each process in JVM will have its own thread. If we want to process some task parallely it creates an overhead by scheduling and managing these many threads. Suppose if the task involves IO operation, then it will block the threads. In such cases we want a NIO operation and Asynchronous API.
+
+![](src/main/resources/SynchronousAPI.png)
+
+![](src/main/resources/AsyncIOServelet3.png)
+
+![](src/main/resources/UseCasesofASynch.png)
+
+
+#### Completable Futures
+
+Perform possible asynchronous (non-blocking) computations and trigger dependant computations which could also be asynchronous
+
+![](src/main/resources/AsynchronousAPI.png)
