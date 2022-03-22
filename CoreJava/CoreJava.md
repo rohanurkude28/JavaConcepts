@@ -2,7 +2,7 @@
 
 ### JVM ( java virtual machine) architecture
 
-JVM responsibility is - To load and Execute you application files
+JVM's responsibility is - To load and Execute you application files
 
 ![](src/main/resources/JVMArchitectureDiagram.png)
 
