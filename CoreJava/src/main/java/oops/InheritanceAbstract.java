@@ -14,6 +14,10 @@ abstract class InheritanceAbstractParent {
     void workout(){
         System.out.println("Workout like InheritanceAbstractParent");
     }
+
+    static void entertain() {
+        System.out.println("Entertaining like InheritanceAbstractParent");
+    }
 }
 
 public class InheritanceAbstract extends InheritanceAbstractParent{
@@ -33,11 +37,17 @@ public class InheritanceAbstract extends InheritanceAbstractParent{
         System.out.println("Workout like InheritanceAbstract");
     }
 
+    static void entertain() {
+        System.out.println("Entertaining like InheritanceAbstract");
+    }
+
     public static void main(String[] args) {
         InheritanceAbstract anAbstract = new InheritanceAbstract();
         anAbstract.eat();
         anAbstract.move();
         anAbstract.sleep();
         anAbstract.workout();
+        entertain();
+        InheritanceAbstractParent.entertain();
     }
 }
