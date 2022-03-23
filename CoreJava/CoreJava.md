@@ -160,3 +160,18 @@ Encapsulation vs. Abstraction
 - Abstraction is the process of modeling real things vs Encapsulation is the process of hiding information details and protecting data and behavior of an object 
 - Encapsulation is done based on abstraction. Imagine you are building a house. The house is made by bricks. Abstraction is the bricks and encapsulation is the house.
 
+#### Coupling
+
+Coupling refers to the extent to which a class knows about the other class.
+
+There are two types of coupling -
+- Tight Coupling(a bad programming design) - Inheritance
+- Loose Coupling(a good programming design) - Composition, Encapsulation
+
+#### Cohesion
+
+Cohesion refers to the extent to which a class is defined to do a specific specialized task. Single responsibility Principle.
+
+There are two types of cohesion -
+- Low cohesion(a bad programming design)
+- High Cohesion(a good programming design)
