@@ -78,9 +78,42 @@ Heap Tuning
 
 ### OOPS Concepts
 
-#### Inheritance
+#### Rules of Overriding
 
-##### Interface
+Overriding refers to the ability of a subclass to re-implement an instance method inherited from a superclass
+- Only inherited methods can be overridden.
+- Final and static methods cannot be overridden.
+- The overriding method must have same argument list.
+- The overriding method must have same return type (or subtype).
+- The overriding method must not have more restrictive access modifier.
+- The overriding method must not throw new or broader checked exceptions.
+- Use the super keyword to invoke the overridden method from a subclass.
+- Constructors cannot be overridden.
+- Abstract methods must be overridden by the first concrete (non-abstract) subclass.
+- A static method in a subclass may hide another static one in a superclass, and that’s called hiding.
+- The synchronized/strictfp modifier has no effect on the rules of overriding.
+
+#### Association
+
+##### Composition (HAS-A)
+
+- A composition in Java between two objects associated with each other exists when there is a strong relationship between one class and another.
+- Other classes cannot exist without the owner or parent class.
+- It is possible to achieve “multiple inheritances”
+- Loosely coupled
+- Better Unit Testing
+
+##### Aggregation (HAS-A)
+
+- Aggregation is a term which is used to refer one way relationship between two objects.
+- Object can live without each other
+- Code re-usability
+- Loosely coupled
+- Better Unit Testing
+
+##### Inheritance (IS-A)
+
+###### Interface
 
 - By default all methods are public and abstract
 - Java does allow multiple inheritance between interfaces
@@ -88,14 +121,14 @@ Heap Tuning
 - From Java 9, private methods can be added to interfaces in Java, to use private methods to hide details on implementation from classes
 - Three Types : Normal, Functional (Can have only one abstract method and many default/static methods), Marker Interface (No definitions checked by compiler by using instanceof **)
 
-##### Abstract class
+###### Abstract class
 
 - Can have both Abstract as well as non Abstract methods
 - Abstract methods can be public or protected
 - Private non Abstract methods wont be called as overriding
 - Java does not allow a class inherits two or more classes directly
 
-##### Rules of Inheritance
+###### Rules of Inheritance
 
 - When a class implements an interface, it has to provide implementation details for all the methods of that interface
 - When an abstract class implements an interface, it’s not required to override methods of the super interface. But the first non-abstract class in the inheritance tree must override the methods.
@@ -108,3 +141,22 @@ Heap Tuning
 - The sub class cannot inherit constructors from its super class
 - Object is the base class of all classes in Java
 - We can use covariant return types while overriding, thus changing method definition
+
+#### Polymorphism
+
+Polymorphism means ‘many forms’
+- Can be achieved using overloading, overriding and operator overloading
+- Two Types : Static and Dynamic Polymorphism
+
+#### Encapsulation
+
+Encapsulation - ‘information hiding’ or ‘data hiding’.
+
+- Encapsulation is implemented in Java using interfaces, classes, access modifiers, setters and getters.
+- Used cause : Flexibility,Reusability and Maintainability
+
+Encapsulation vs. Abstraction
+- Cant be compared both serves a different purpose
+- Abstraction is the process of modeling real things vs Encapsulation is the process of hiding information details and protecting data and behavior of an object 
+- Encapsulation is done based on abstraction. Imagine you are building a house. The house is made by bricks. Abstraction is the bricks and encapsulation is the house.
+
