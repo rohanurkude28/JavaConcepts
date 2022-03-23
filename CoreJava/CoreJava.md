@@ -118,7 +118,7 @@ Overriding refers to the ability of a subclass to re-implement an instance metho
 - By default all methods are public and abstract
 - Java does allow multiple inheritance between interfaces
 - Can have default and static methods, which can call private methods
-- From Java 9, private methods can be added to interfaces in Java, to use private methods to hide details on implementation from classes
+- From Java 9, private methods can be added to interface in Java, to use private methods to hide details on implementation from classes
 - Three Types : Normal, Functional (Can have only one abstract method and many default/static methods), Marker Interface (**No definitions checked by compiler by using instanceof**)
 
 ###### Abstract class
@@ -135,8 +135,8 @@ Overriding refers to the ability of a subclass to re-implement an instance metho
 - When a class extends another class, the subclass inherits all the public and protected members of the super class. The default members are inherited only in the same package.
 - When an interface extends another interface, the sub interface inherits all the methods declared in the super interface, and it’s free to re-declare the methods or not.
 - We can have a class inherits both an interface and a class directly
-- We can use the super type when creating a new object of the sub type. **Liskovs Substitution principle**
-- The super keyword is used to access members of the super type from the sub type
+- We can use the super type when creating a new object of the subtype. **Liskov's Substitution principle**
+- The super keyword is used to access members of the super type from the subtype
 - Private members are not inherited. Default members are inherited only if both the subclass and super class are in the same package, otherwise default members are not inherited.
 - The sub class cannot inherit constructors from its super class.
 - Object is the base class of all classes in Java.
@@ -203,11 +203,35 @@ There are two types of cohesion -
 
 ##### Try with Resource
 
-- Class needs to implement AutoCloseable interface. Overriden close method.
-- Can have one or multiple resource (semi colon separated) (Closed in order of declaration)
+- Class needs to implement AutoCloseable interface. Overridden close method.
+- Can have one or multiple resource (semicolon separated) (Closed in order of declaration)
 
 ##### Catch Multiple Exceptions
 
 - Exceptions belong to the same class hierarchy, you can simply catch that base exception type.
 - Cannot catch both ExceptionA and ExceptionB in the same block if ExceptionB is inherited, either directly or indirectly. Compiler time issue
-- The exception variable declared within multi-catch block is implicitly final . Therefore, we can not assign the variable to different value within the catch block. 
+- The exception variable declared within multi-catch block is implicitly final . Therefore, we can not assign the variable to different value within the catch block.
+
+
+#### Core Java
+
+- Final Value can be initialised by 3 ways : constructor, instance block, direct
+- Order of Execution -  Static Block (Called once), Instance Block, Default Constructor/Parameterised Constructor, Methods
+- Object Creation ways: 
+<ol>
+    <li> New Keyword</li>
+    <li> Cloning - Implement cloneable and clone from existing object</li>
+    <li> Deserialization - Implement Serializable, Serializable an object and Deserializable it  </li>
+    <li> Reflection - Class.forname</li>
+    <li> Reflection - constructor.newInstance()</li>
+</ol>
+
+- Design Immutable class
+<ol>
+    <li> Declare the class as final so it can’t be extended. </li>
+    <li> Make all fields private so that direct access is not allowed. </li>
+    <li> Don’t provide setter methods for variables. </li>
+    <li> Initialize all the fields via a constructor performing deep copy. </li>
+    <li> Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference. </li>
+</ol>
+- 
