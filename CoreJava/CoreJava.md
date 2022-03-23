@@ -119,7 +119,7 @@ Overriding refers to the ability of a subclass to re-implement an instance metho
 - Java does allow multiple inheritance between interfaces
 - Can have default and static methods, which can call private methods
 - From Java 9, private methods can be added to interfaces in Java, to use private methods to hide details on implementation from classes
-- Three Types : Normal, Functional (Can have only one abstract method and many default/static methods), Marker Interface (No definitions checked by compiler by using instanceof **)
+- Three Types : Normal, Functional (Can have only one abstract method and many default/static methods), Marker Interface (**No definitions checked by compiler by using instanceof**)
 
 ###### Abstract class
 
@@ -135,29 +135,29 @@ Overriding refers to the ability of a subclass to re-implement an instance metho
 - When a class extends another class, the subclass inherits all the public and protected members of the super class. The default members are inherited only in the same package.
 - When an interface extends another interface, the sub interface inherits all the methods declared in the super interface, and it’s free to re-declare the methods or not.
 - We can have a class inherits both an interface and a class directly
-- We can use the super type when creating a new object of the sub type. Liskovs Substitution principle
+- We can use the super type when creating a new object of the sub type. **Liskovs Substitution principle**
 - The super keyword is used to access members of the super type from the sub type
 - Private members are not inherited. Default members are inherited only if both the subclass and super class are in the same package, otherwise default members are not inherited.
-- The sub class cannot inherit constructors from its super class
-- Object is the base class of all classes in Java
-- We can use covariant return types while overriding, thus changing method definition
+- The sub class cannot inherit constructors from its super class.
+- Object is the base class of all classes in Java.
+- We can use covariant return types while overriding, thus changing method definition.
 
 #### Polymorphism
 
-Polymorphism means ‘many forms’
-- Can be achieved using overloading, overriding and operator overloading
-- Two Types : Static and Dynamic Polymorphism
+**Polymorphism means ‘many forms’**
+- Can be achieved using overloading, overriding and operator overloading.
+- Two Types : Static and Dynamic Polymorphism.
 
 #### Encapsulation
 
-Encapsulation - ‘information hiding’ or ‘data hiding’.
+**Encapsulation - ‘information hiding’ or ‘data hiding’.**
 
 - Encapsulation is implemented in Java using interfaces, classes, access modifiers, setters and getters.
-- Used cause : Flexibility,Reusability and Maintainability
+- Used cause : Flexibility,Reusability and Maintainability.
 
 Encapsulation vs. Abstraction
 - Cant be compared both serves a different purpose
-- Abstraction is the process of modeling real things vs Encapsulation is the process of hiding information details and protecting data and behavior of an object 
+- Abstraction is the process of modeling real things vs Encapsulation is the process of hiding information details and protecting data and behavior of an object.
 - Encapsulation is done based on abstraction. Imagine you are building a house. The house is made by bricks. Abstraction is the bricks and encapsulation is the house.
 
 #### Coupling
@@ -165,13 +165,49 @@ Encapsulation vs. Abstraction
 Coupling refers to the extent to which a class knows about the other class.
 
 There are two types of coupling -
-- Tight Coupling(a bad programming design) - Inheritance
-- Loose Coupling(a good programming design) - Composition, Encapsulation
+- Tight Coupling(a bad programming design) - **Inheritance**
+- Loose Coupling(a good programming design) - **Composition, Encapsulation**
 
 #### Cohesion
 
-Cohesion refers to the extent to which a class is defined to do a specific specialized task. Single responsibility Principle.
+Cohesion refers to the extent to which a class is defined to do a specific specialized task. **Single responsibility Principle.**
 
 There are two types of cohesion -
 - Low cohesion(a bad programming design)
 - High Cohesion(a good programming design)
+
+#### Upcasting vs Downcasting
+
+- Upcasting (Generalization or Widening) is casting to a parent type. eg: cast from a Dog to an Animal, Animal anim = (Animal) dog;
+- Downcasting When we want to cast a Super class to Sub class. eg: Cat cat = (Cat) anim;
+
+#### Exceptions
+
+##### Hierarchy
+
+![](src/main/resources/ExceptionsHierarchy.png)
+
+- Error indicates "serious problems that a reasonable application should not try to catch.”
+- Exceptions indicate “conditions that a reasonable application might want to catch.”
+
+##### Checked (Compile-time) vs Unchecked Exceptions (Runtime)
+
+- Exceptions that can occur at compile-time are called checked exceptions since they need to be explicitly checked and handled in code. Classes that directly inherit Throwable - except RuntimeException
+- Unchecked exceptions can be thrown "at any time" (i.e. run-time). Therefore, methods don't have to explicitly catch or throw unchecked exceptions. Classes that inherit RuntimeException
+
+
+##### Exception Handling with Method Overriding
+
+- If the superclass method does not declare an exception, subclass overridden method cannot declare the checked exception but it can declare unchecked exception.
+- If the superclass method declares an exception, subclass overridden method can declare same, subclass exception or no exception but cannot declare parent exception.
+
+##### Try with Resource
+
+- Class needs to implement AutoCloseable interface. Overriden close method.
+- Can have one or multiple resource (semi colon separated) (Closed in order of declaration)
+
+##### Catch Multiple Exceptions
+
+- Exceptions belong to the same class hierarchy, you can simply catch that base exception type.
+- Cannot catch both ExceptionA and ExceptionB in the same block if ExceptionB is inherited, either directly or indirectly. Compiler time issue
+- The exception variable declared within multi-catch block is implicitly final . Therefore, we can not assign the variable to different value within the catch block. 

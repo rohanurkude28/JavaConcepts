@@ -10,6 +10,10 @@ interface InheritanceParent {
     private void workout(){
         System.out.print("Working out Interface...");
     }
+
+    default void entertain() {
+        System.out.println("Entertain MyInterface");
+    }
 }
 
 public class InheritanceInterface implements InheritanceParent{
@@ -24,6 +28,11 @@ public class InheritanceInterface implements InheritanceParent{
 
     public void sleep() {
         System.out.print("Sleeping...");
+    }
+
+    @Override
+    public void entertain() {
+        System.out.println("Entertain MyInterface");
     }
 
 }
