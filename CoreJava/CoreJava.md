@@ -74,3 +74,37 @@ JMM is a specification which guarantees visibility of fields (AKA happens before
 Heap Tuning
 
 ![](src/main/resources/HeapTuning.png)
+
+
+### OOPS Concepts
+
+#### Inheritance
+
+##### Interface
+
+- By default all methods are public and abstract
+- Java does allow multiple inheritance between interfaces
+- Can have default and static methods, which can call private methods
+- From Java 9, private methods can be added to interfaces in Java, to use private methods to hide details on implementation from classes
+- Three Types : Normal, Functional (Can have only one abstract method and many default/static methods), Marker Interface (No definitions checked by compiler by using instanceof **)
+
+##### Abstract class
+
+- Can have both Abstract as well as non Abstract methods
+- Abstract methods can be public or protected
+- Private non Abstract methods wont be called as overriding
+- Java does not allow a class inherits two or more classes directly
+
+##### Rules of Inheritance
+
+- When a class implements an interface, it has to provide implementation details for all the methods of that interface
+- When an abstract class implements an interface, it’s not required to override methods of the super interface. But the first non-abstract class in the inheritance tree must override the methods.
+- When a class extends another class, the subclass inherits all the public and protected members of the super class. The default members are inherited only in the same package.
+- When an interface extends another interface, the sub interface inherits all the methods declared in the super interface, and it’s free to re-declare the methods or not.
+- We can have a class inherits both an interface and a class directly
+- We can use the super type when creating a new object of the sub type. Liskovs Substitution principle
+- The super keyword is used to access members of the super type from the sub type
+- Private members are not inherited. Default members are inherited only if both the subclass and super class are in the same package, otherwise default members are not inherited.
+- The sub class cannot inherit constructors from its super class
+- Object is the base class of all classes in Java
+- We can use covariant return types while overriding, thus changing method definition
