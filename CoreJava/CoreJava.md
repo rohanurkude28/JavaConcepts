@@ -75,6 +75,12 @@ Heap Tuning
 
 ![](src/main/resources/HeapTuning.png)
 
+### Reference types
+
+- **Weak reference** - Eligible for GC if object not referenced by any other variables. Good for caches. Are enqueued in ReferenceQueue just before GC (object can be resurrected in finalize). Returns null once object is eligible for GC, even if object is resurrected, the weak-reference still is dead, and will return null.
+- **Soft reference** - Same as above, but its GC’ed only when memory is low. Excellent for caches.
+- **Phantom reference** - Even after GC, it references the object, until the memory is reclaimed. Enqueued in ReferenceQueue after complete reclamation. Always returns null, so that you cannot resurrect it. Can be helpful to check when memory is reclaimed so that you can load next large object.
+- **WeakHashMap** - Weak keys. Removes entry once key is GC’ed.
 
 ### OOPS Concepts
 
@@ -234,4 +240,3 @@ There are two types of cohesion -
     <li> Initialize all the fields via a constructor performing deep copy. </li>
     <li> Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference. </li>
 </ol>
-- 
