@@ -497,3 +497,7 @@ Each thread in Java corresponds to One OS/Native/Kernel Thread. Each process in 
 Perform possible asynchronous (non-blocking) computations and trigger dependant computations which could also be asynchronous
 
 ![](src/main/resources/AsynchronousAPI.png)
+
+#### ReadWrite Lock vs Reentrant Lock
+
+![](src/main/resources/ReadNWriteLock.png)
