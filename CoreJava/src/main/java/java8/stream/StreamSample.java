@@ -9,9 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
-import java.util.stream.Stream;
+import java.util.stream.*;
 
 public class StreamSample {
 
@@ -38,6 +36,10 @@ public class StreamSample {
         //Stream of Primitives
         IntStream intStream = IntStream.range(1, 3);
         LongStream longStream = LongStream.rangeClosed(1, 3);
+
+        intStream.forEach(System.out::print);
+        longStream.forEach(System.out::print);
+        //System.out.println("LongStream "+longStream.collect(Collectors.joining(",")));
 
         //Stream of String
         IntStream streamOfChars = "abc".chars();
