@@ -240,3 +240,12 @@ There are two types of cohesion -
     <li> Initialize all the fields via a constructor performing deep copy. </li>
     <li> Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference. </li>
 </ol>
+
+
+#### Collections
+
+[Collections](Collections.md)
+
+#### Java 8
+
+[Java 8](Java8.md)
